@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Home | SolNet Solutions Inc.</title>
+<link rel="icon" type="image/png" href="Logo/SOLNET%20LOGO.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/animations.css"><link rel="stylesheet" href="css/responsive.css"><link rel="stylesheet" href="css/effects.css"><link rel="stylesheet" href="css/intro.css">
+</head>
+<body>
+<!-- ===== INTRO: 3D logo pops up before the website (css/intro.css + js/intro.js). Plays once per visit. =====
+     To turn it off, delete this whole block (down to the closing </script>). -->
+<div id="solnet-intro" aria-label="SolNet Solutions Inc. intro">
+  <div class="intro-stage">
+    <div class="intro-glow" aria-hidden="true"></div>
+    <div class="intro-logo"><img class="intro-front" src="Logo/SOLNET%20LOGO.png" alt="SolNet Solutions Inc. logo"></div>
+    <p class="intro-name">SolNet <span>Solutions Inc.</span></p>
+    <div class="intro-line" aria-hidden="true"></div>
+    <p class="intro-tag">Telco &middot; Solar</p>
+  </div>
+  <button class="intro-skip" type="button">Skip intro</button>
+</div>
+<script>
+(function(){var el=document.getElementById('solnet-intro'),seen=false,force=false;
+try{seen=sessionStorage.getItem('solnet-intro')==='1';force=localStorage.getItem('solnet-motion')==='on';}catch(e){}
+var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches&&!force;
+if(seen||reduce||/[?&]package=/.test(location.search)||location.hash.length>1){el.parentNode.removeChild(el);}
+else{document.documentElement.classList.add('intro-on');}})();
+</script>
+<header class="site-header">
+  <nav class="nav" aria-label="Main">
+    <!-- COMPANY LOGO: HOMEPAGE -->
+    <a class="brand" href="index.html">
+      <img src="Logo/SOLNET%20LOGO.png" alt="SolNet Solutions Inc. logo">
+      <span class="brand-name">SolNet <span>Solutions Inc.</span></span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="navPanel" aria-label="Open menu"><span></span><span></span></button>
+    <ul class="nav-links" id="navPanel">
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#solutions">Services</a></li>
+      <li><a href="index.html#location">Location</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="home">
+  <section class="hero">
+    <div class="hero-grid-lines"></div>
+    <!-- HERO ENTRANCE ANIMATION: each element fades up in order. --i sets the order (0,1,2...). Change the number to reorder. -->
+    <p class="label hero-anim" style="--i:0">SOLNET SOLUTIONS INC.</p>
+    <h1>
+      <span class="hero-line hero-anim" style="--i:1">Where Telco Meets Solar:</span>
+      <span class="hero-line hero-anim" style="--i:2"><span class="text-shimmer">Powering Connections.</span></span>
+      <span class="hero-line hero-anim" style="--i:3"><span class="text-shimmer">Energizing Progress.</span></span>
+    </h1>
+    <p class="lead hero-anim" style="--i:4">Engineering reliable infrastructure for a connected and sustainable future.</p>
+    <div class="btn-row hero-anim" style="--i:5">
+      <a class="btn btn-primary" href="#solutions">EXPLORE SOLUTIONS <span class="arrow">→</span></a>
+      <a class="btn btn-secondary" href="#about">ABOUT SOLNET</a>
+    </div>
+    <div class="scroll-hint"><span>Scroll</span><i></i></div>
+  </section>
+
+  <section class="section split" id="about">
+    <div><p class="label">01 — About</p><h2>SolNet Solutions for a <span class="text-shimmer">connected future.</span></h2></div>
+    <p class="reveal body-large">SolNet Solutions Inc. is a premier engineering contractor specializing in modern infrastructure development across two vital sectors: Telecommunications and Solar Energy. Grounded in technical excellence and strict project management standards, we provide end-to-end design, installation, and maintenance services. Whether deploying high-performance photovoltaic systems to lower energy costs or constructing resilient telecom networks to keep communities connected, SolNet Solutions delivers reliable, high-quality, and scalable engineering solutions tailored to meet the demands of modern industry.</p>
+  </section>
+
+  <section class="section split" id="location">
+    <div class="map-col">
+      <!-- GOOGLE MAPS: location query = Calumpang, Naval, Biliran, Philippines (no API key needed). To change the place, edit "q=" in the src below and "query=" in the link. -->
+      <div class="map-pair">
+        <div class="map-box reveal">
+          <div class="map-embed" id="mapContainer">
+            <iframe title="Company location in Calumpang, Naval, Biliran"
+                    src="https://www.google.com/maps?q=Calumpang%2C%20Naval%2C%20Biliran%2C%20Philippines&amp;output=embed"
+                    loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          </div>
+        </div>
+        <!-- HEADQUARTERS IMAGE SLOT (beside the map): replace the src path to change this image -->
+        <div class="image-wrapper hq-slot">
+          <img src="images/company/Office.jpg.png" alt="SolNet Solutions Inc. headquarters" loading="lazy" data-zoom>
+          <span class="caption always">SolNet headquarters</span>
+        </div>
+      </div>
+      <a class="btn btn-secondary map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Calumpang%2C%20Naval%2C%20Biliran%2C%20Philippines" target="_blank" rel="noopener noreferrer">OPEN IN GOOGLE MAPS <span class="arrow">→</span></a>
+    </div>
+    <div>
+      <p class="label">02 — Location</p><h2>Find us.</h2><p class="label-sub">Our location</p>
+      <h3>SolNet Solutions Inc.</h3>
+      <p>Engineering Contractor<br>Telecommunications &amp; Solar Energy</p>
+      <dl class="info"><dt>Address</dt><dd>Calumpang, Naval, Biliran, Philippines</dd><dt>Contact</dt><dd>0966-711-8245</dd><dt>Email</dt><dd>SolNetSolutions@gmail.com</dd></dl>
+    </div>
+  </section>
+
+  <section class="section" id="work">
+    <p class="label">03 — Our work</p><h2>Our work.</h2>
+    <!-- OUR WORK GALLERY: exactly 6 image slots. Each slot = one .image-wrapper block. -->
+    <div class="gallery">
+      <div class="image-wrapper g0">
+        <!-- OUR WORK IMAGE SLOT 1: Replace the src path to change this image -->
+        <img src="images/Our Work/01.png" alt="SolNet company office" loading="lazy" data-zoom>
+        <span class="caption">Solar</span>
+      </div>
+      <div class="image-wrapper g1">
+        <!-- OUR WORK IMAGE SLOT 2: Replace the src path to change this image -->
+        <img src="images/Our Work/02.png" alt="Telecommunications project" loading="lazy" data-zoom>
+        <span class="caption">Solar</span>
+      </div>
+      <div class="image-wrapper g2">
+        <!-- OUR WORK IMAGE SLOT 3: Replace the src path to change this image -->
+        <img src="images/Our Work/03.jpg" alt="Substation 1" loading="lazy" data-zoom>
+        <span class="caption">Solar</span>
+      </div>
+      <div class="image-wrapper g3">
+        <!-- OUR WORK IMAGE SLOT 4: Replace the src path to change this image -->
+        <img src="images/Our Work/04.jpg" alt="Substation 2" loading="lazy" data-zoom>
+        <span class="caption">Solar</span>
+      </div>
+      <div class="image-wrapper g4">
+        <!-- OUR WORK IMAGE SLOT 5: Replace the src path to change this image -->
+        <img src="images/Our Work/05.jpg" alt="Substation 3" loading="lazy" data-zoom>
+        <span class="caption">Solar</span>
+      </div>
+      <div class="image-wrapper g5 contain">
+        <!-- OUR WORK IMAGE SLOT 6: Replace the src path to change this image -->
+        <img src="images/Our Work/06.jpg" alt="SolNet solar project" loading="lazy" class="contain" data-zoom>
+        <span class="caption">Telco</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark" id="solutions">
+    <p class="label">04 — Solutions</p><h2>Explore SolNet.</h2><p class="label-sub">Select a solution</p>
+    <!-- SERVICE CARD IMAGES (images/home/): the image sits in the upper part of each card and fades into the card.
+         Replace the src path inside .service-media to change an image. -->
+    <div class="service-grid">
+      <button class="service-card reveal" data-modal="m-solar" aria-haspopup="dialog" style="--d:0.0s">
+        <!-- SERVICE CARD IMAGE: SOLAR -->
+        <span class="service-media"><img src="images/home/SOLAR PANELS NEW.png" alt="Solar panels installation" loading="lazy"></span>
+        <span class="service-number">01</span><span class="service-title">SOLAR</span><span class="service-desc">Solar Energy Solutions</span><span class="service-cta">EXPLORE <span class="arrow">→</span></span></button>
+      <button class="service-card reveal" data-modal="m-telco" aria-haspopup="dialog" style="--d:0.1s">
+        <!-- SERVICE CARD IMAGE: TELCO -->
+        <span class="service-media"><img src="images/home/TELCO.png" alt="Telecommunications infrastructure" loading="lazy"></span>
+        <span class="service-number">02</span><span class="service-title">TELCO</span><span class="service-desc">Telecommunications Solutions</span><span class="service-cta">EXPLORE <span class="arrow">→</span></span></button>
+      <button class="service-card reveal" data-modal="m-org" aria-haspopup="dialog" style="--d:0.2s">
+        <!-- SERVICE CARD IMAGE: ORG CHART -->
+        <span class="service-media"><img src="images/home/Cover ORGCHART.png" alt="SolNet organizational chart cover" loading="lazy"></span>
+        <span class="service-number">03</span><span class="service-title">ORG CHART</span><span class="service-desc">Organizational Structure</span><span class="service-cta">EXPLORE <span class="arrow">→</span></span></button>
+      <button class="service-card reveal" data-modal="m-energy" aria-haspopup="dialog" style="--d:0.3s">
+        <!-- SERVICE CARD IMAGE: ENERGY MONITORING SYSTEM -->
+        <span class="service-media"><img src="images/home/BIPSU 3D NEW.png" alt="BiPSU 3D campus model" loading="lazy"></span>
+        <span class="service-number">04</span><span class="service-title">ENERGY MONITORING SYSTEM</span><span class="service-desc">Campus Power Infrastructure</span><span class="service-cta">EXPLORE <span class="arrow">→</span></span></button>
+    </div>
+  </section>
+
+  <section class="section cta">
+    <h2>Let's build<br>the future<br><span class="text-shimmer">together.</span></h2>
+    <div>
+      <p class="lead">From renewable energy systems to next-generation telecommunications infrastructure, SolNet Solutions Inc. delivers engineering solutions designed for a connected and sustainable future.</p>
+      <a class="btn btn-primary" href="#contact">CONTACT SOLNET <span class="arrow">→</span></a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="contact">
+  <!-- PACKAGE INQUIRY: hidden until a solar AVAIL NOW button is clicked. Nothing is booked or bought here. -->
+  <div class="inquiry" id="inquiry" hidden>
+    <h4 id="inquiryTitle">Solar package inquiry</h4>
+    <p>Selected package: <strong id="inquiryPackage">—</strong></p>
+    <p>This only opens an email draft to SolNet Solutions. Your inquiry is not a purchase or booking until SolNet confirms with you.</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" id="inquiryMail" href="mailto:SolNetSolutions@gmail.com">EMAIL INQUIRY <span class="arrow">→</span></a>
+      <button class="btn btn-secondary" id="inquiryClear" type="button">CLEAR</button>
+    </div>
+  </div>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">
+        <img class="footer-logo" src="Logo/SOLNET%20LOGO.png" alt="SolNet Solutions Inc. logo">
+        <span class="footer-brand-name">SolNet Solutions Inc.</span>
+      </div>
+      <p>Engineering reliable infrastructure for a connected and sustainable future.</p>
+    </div>
+    <div><h4>Quick links</h4><ul><li><a href="index.html">Home</a></li><li><a href="index.html#about">About</a></li><li><a href="pages/solar.html">Solar</a></li><li><a href="pages/telco.html">Telecommunications</a></li><li><a href="pages/energy-monitor.html">Energy Monitoring</a></li></ul></div>
+    <div><h4>Socials</h4><ul><li><a href="#" aria-label="Facebook">Facebook</a></li><li><a href="#" aria-label="Instagram">Solnet</a></li><li><a href="#" aria-label="LinkedIn">LinkedIn</a></li></ul></div>
+    <div><h4>Contact</h4><p>Brgy. Calumpang Naval, Biliran</p><p>0966-711-8245</p><p>SolNetSolutions@gmail.com</p></div>
+  </div>
+  <!-- FOOTER CREDIT (centered): edit the three lines below -->
+  <div class="footer-credit">
+    <p class="credit-title">SOLNET SOLUTION</p>
+    <p>BSEE 4A</p>
+    <p>Submitted to: Engr. Roosevelt G. Mendoza</p>
+  </div>
+  <p class="copyright">© 2026 SolNet Solutions Inc. All Rights Reserved.</p>
+</footer>
+
+<!-- ===== SOLAR MODAL: banner image + packages in order Basic, Lite, Pro, Promax ===== -->
+<template id="m-solar"><p class="label">Solutions</p><h2>SOLAR ENERGY SOLUTIONS</h2>
+<div class="image-wrapper wide">
+<!-- SOLAR MODAL BANNER IMAGE: Replace the src path to change this image -->
+<img src="images/home/SOLAR PANELS NEW.png" alt="Solar panels installation" loading="lazy" data-zoom><span class="caption">Solar panels installation</span></div>
+<p class="lead">Harness the power of the sun with SolNet Solutions. Our Solar Energy division specializes in custom-engineered rooftop and ground-mounted solar installations designed to maximize energy output and return on investment. By utilizing high-efficiency panels and industry-grade inverter technology, we deliver dependable solar power systems that lower monthly utility bills, protect against rising energy costs, and significantly reduce your carbon footprint.</p>
+<div class="solar-grid">
+<article class="solar-card"><div class="solar-img">
+<!-- SOLAR PACKAGE 1: BASIC -->
+<img src="images/solar/basic landscape.png" alt="Basic solar package" loading="lazy"></div>
+<div class="solar-body"><span class="solar-tag">Solar package</span><h3>Basic</h3><a class="btn btn-primary avail-btn" href="https://forms.gle/T37FxReJpFYMRsY59" target="_blank" rel="noopener noreferrer">AVAIL NOW <span class="arrow">→</span></a></div></article>
+<article class="solar-card"><div class="solar-img">
+<!-- SOLAR PACKAGE 2: LITE -->
+<img src="images/solar/Lite landscape.png" alt="Lite solar package" loading="lazy"></div>
+<div class="solar-body"><span class="solar-tag">Solar package</span><h3>Lite</h3><a class="btn btn-primary avail-btn" href="https://forms.gle/T37FxReJpFYMRsY59" target="_blank" rel="noopener noreferrer">AVAIL NOW <span class="arrow">→</span></a></div></article>
+<article class="solar-card"><div class="solar-img">
+<!-- SOLAR PACKAGE 3: PRO -->
+<img src="images/solar/pro landscape.png" alt="Pro solar package" loading="lazy"></div>
+<div class="solar-body"><span class="solar-tag">Solar package</span><h3>Pro</h3><a class="btn btn-primary avail-btn" href="https://forms.gle/T37FxReJpFYMRsY59" target="_blank" rel="noopener noreferrer">AVAIL NOW <span class="arrow">→</span></a></div></article>
+<article class="solar-card"><div class="solar-img">
+<!-- SOLAR PACKAGE 4: PROMAX -->
+<img src="images/solar/promax landscape.png" alt="Promax solar package" loading="lazy"></div>
+<div class="solar-body"><span class="solar-tag">Solar package</span><h3>Promax</h3><a class="btn btn-primary avail-btn" href="https://forms.gle/T37FxReJpFYMRsY59" target="_blank" rel="noopener noreferrer">AVAIL NOW <span class="arrow">→</span></a></div></article>
+</div>
+<a class="btn btn-primary" href="pages/solar.html">VIEW FULL SOLAR SOLUTIONS <span class="arrow">→</span></a></template>
+
+<!-- ===== TELCO MODAL ===== -->
+<template id="m-telco"><p class="label">Solutions</p><h2>TELECOMMUNICATIONS SOLUTIONS</h2>
+<div class="image-wrapper wide">
+<!-- TELCO MODAL IMAGE: Replace the src path to change this image -->
+<img src="images/home/TELCO.png" alt="Telecommunications infrastructure" loading="lazy" data-zoom><span class="caption">Telecommunications infrastructure</span></div>
+<p class="lead">Connect seamlessly to the digital world with SolNet Solutions. Our Telecommunications division specializes in custom-engineered fiber-optic, wireless, and network infrastructure installations designed to maximize bandwidth, speed, and uptime reliability. By utilizing enterprise-grade hardware and industry-standard cabling technology, we deliver dependable communication systems that eliminate network bottlenecks, protect critical data transfers, and future-proof your organization’s digital infrastructure.</p><a class="btn btn-primary" href="pages/telco.html">VIEW FULL TELCO SOLUTIONS <span class="arrow">→</span></a></template>
+
+<!-- ===== ORG CHART MODAL: cover image + three people side by side ===== -->
+<template id="m-org"><p class="label">Organization</p><h2>SOLNET SOLUTIONS ORGANIZATIONAL STRUCTURE</h2>
+<div class="image-wrapper wide">
+<!-- ORG CHART MODAL COVER IMAGE: Replace the src path to change this image -->
+<img src="images/home/Cover ORGCHART.png" alt="SolNet organizational chart cover" loading="lazy" data-zoom><span class="caption">SolNet organizational chart</span></div>
+<div class="org-team">
+<article class="org-person"><div class="org-photo">
+<!-- ORG CHART PHOTO 1: Replace the src path to change this image -->
+<img src="images/org-chart/Ronn hansam.png.png" alt="SolNet team member 1" loading="lazy"></div>
+<div class="org-info"><span class="label">CHIEF OPERATING OFFICER (COO)</span><h3>ENGR. RONN LENALD M. LUCENTE</h3><p>Oversees the company's daily operations and project execution. Manages installation teams and field operations. Ensures projects are completed safely, on time, and within budget. Coordinates resources, schedules, and operational workflows. Monitors customer satisfaction and improves operational efficiency.</p></div></article>
+<article class="org-person"><div class="org-photo">
+<!-- ORG CHART PHOTO 2: Replace the src path to change this image -->
+<img src="images/org-chart/Gino hansam.png.png" alt="SolNet team member 2" loading="lazy"></div>
+<div class="org-info"><span class="label">CHIEF TECHNOLOGY OFFICER (CTO)</span><h3>ENGR. GINO FRANCIS DOCALLOS</h3><p>Leads the development of solar and telecommunications technologies.
+Supervises engineering design, testing, and technical improvements.
+Ensures projects meet quality and industry standards.
+Provides technical guidance to engineers and field personnel.
+Evaluates and implements new technologies to improve services.</p></div></article>
+<article class="org-person"><div class="org-photo">
+<!-- ORG CHART PHOTO 3: Replace the src path to change this image -->
+<img src="images/org-chart/Lahrey hansam.png.png" alt="SolNet team member 3" loading="lazy"></div>
+<div class="org-info"><span class="label">CHIEF EXECUTIVE OFFICER (CEO)</span><h3>ENGR. LAHREY B. DANDAN</h3><p>Develops the company's vision, goals, and strategic plans.
+Oversees all business operations and major company decisions.
+Builds relationships with clients, partners, and stakeholders.
+Ensures compliance with legal, financial, and safety standards.
+Monitors overall company performance and drives business growth.</p></div></article>
+</div>
+<a class="btn btn-primary" href="pages/org-chart.html">VIEW ORGANIZATION <span class="arrow">→</span></a></template>
+
+<!-- ===== ENERGY MONITORING MODAL ===== -->
+<template id="m-energy"><p class="label">Infrastructure</p><h2>CAMPUS POWER INFRASTRUCTURE</h2>
+<div class="image-wrapper wide contain">
+<!-- ENERGY MODAL IMAGE: Replace the src path to change this image -->
+<img src="images/home/BIPSU 3D NEW.png" alt="BiPSU 3D campus model" loading="lazy" class="contain" data-zoom><span class="caption">BiPSU 3D campus model</span></div>
+<p class="lead">Biliran Province State University utilizes a robust and redundant power distribution system centered around three primary substations located on campus. To guarantee a reliable and stable electricity supply for its various facilities, BiPSU employs three separate 3-bank transformer configurations. This sophisticated electrical setup provides significant capacity and operational flexibility, ensuring that the critical power needs of the university are consistently met to support its academic and administrative operations.</p><a class="btn btn-primary" href="pages/energy-monitor.html">VIEW ENERGY MONITORING <span class="arrow">→</span></a></template>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Details" hidden><div class="modal-content"><button class="modal-close" aria-label="Close">×</button><div class="modal-body"></div></div></div>
+
+<script src="js/background.js"></script>
+<script src="js/main.js"></script><script src="js/navigation.js"></script><script src="js/modal.js"></script><script src="js/animations.js"></script>
+<script src="js/inquiry.js"></script>
+<script src="js/ui-enhance.js"></script>
+<script src="js/motion.js"></script>
+<script src="js/effects.js"></script>
+<script src="js/intro.js"></script>
+<!-- DIAGNOSTIC (optional): uncomment to list broken/hidden images in the browser Console
+<script src="js/img-check.js"></script> -->
+</body>
+</html>

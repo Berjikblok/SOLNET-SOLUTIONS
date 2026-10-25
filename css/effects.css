@@ -1,0 +1,114 @@
+/* ============================================================================
+   SOLNET EFFECTS LAYER  (css/effects.css)  -  loaded AFTER style.css / animations.css / responsive.css
+   Everything here is additive. Classes are prefixed fx- so nothing clashes with your older files.
+   Pairs with js/effects.js.  Content is only ever hidden by a class that JS adds, so if JS fails
+   nothing stays invisible.
+   Sections: 1 scroll progress | 2 scroll reveal | 3 split text + typewriter | 4 tilt + magnetic
+             5 cursor | 6 gradients | 7 page transition (View Transitions API) | 8 motion notice
+   ============================================================================ */
+
+/* ---------- 1. scroll progress bar (thin, gold -> blue) ---------- */
+.fx-scroll{position:fixed;top:0;left:0;right:0;height:3px;z-index:199;pointer-events:none;
+  transform:scaleX(0);transform-origin:0 50%;
+  background:linear-gradient(90deg,var(--gold,#C9A84C),var(--gold-light,#E3C877) 45%,var(--blue,#7C9ED0));
+  box-shadow:0 0 10px rgba(201,168,76,.35)}
+
+/* ---------- 2. scroll reveal (separate from your existing .reveal) ---------- */
+@keyframes fx-up   {from{opacity:0;translate:0 32px}to{opacity:1;translate:0 0}}
+@keyframes fx-left {from{opacity:0;translate:-40px 0}to{opacity:1;translate:0 0}}
+@keyframes fx-right{from{opacity:0;translate: 40px 0}to{opacity:1;translate:0 0}}
+@keyframes fx-zoom {from{opacity:0;translate:0 36px;scale:.9}to{opacity:1;translate:0 0;scale:1}}
+@keyframes fx-fade {from{opacity:0}to{opacity:1}}
+.fx-r{opacity:0}                                        /* JS adds this only to elements still below the fold */
+.fx-r.fx-up   {translate:0 32px}
+.fx-r.fx-left {translate:-40px 0}
+.fx-r.fx-right{translate:40px 0}
+.fx-r.fx-zoom {translate:0 36px;scale:.9}
+.fx-r.fx-in{opacity:1;translate:0 0;scale:1;animation:fx-up .8s var(--ease,cubic-bezier(.22,.61,.36,1)) var(--fx-d,0s) backwards}
+.fx-r.fx-in.fx-left {animation-name:fx-left}
+.fx-r.fx-in.fx-right{animation-name:fx-right}
+.fx-r.fx-in.fx-fade {animation-name:fx-fade}
+.fx-r.fx-in.fx-zoom {animation-name:fx-zoom;animation-duration:.9s}
+
+/* ---------- 2b. "Our work" curtain wipe (homepage gallery) ----------
+   Each photo is uncovered from the bottom up while a thin gold scan line rides the edge,
+   and the picture settles from a slow zoom and black-and-white into full color. Photos go one after another. */
+@keyframes fx-wipe-img {0%{clip-path:inset(100% 0 0 0);scale:1.35;filter:grayscale(1) brightness(.6)}
+  55%{clip-path:inset(0 0 0 0);filter:grayscale(.4) brightness(.85)}100%{clip-path:inset(0 0 0 0);scale:1;filter:none}}
+@keyframes fx-wipe-line{0%{top:100%;opacity:1}80%{top:0;opacity:1}100%{top:0;opacity:0}}
+/* the frame stays visible (so the scroll trigger can see it); only the photo inside is hidden until it is wiped in */
+.fx-r.fx-wipe{opacity:1}
+.fx-r.fx-wipe img{clip-path:inset(100% 0 0 0)}
+.fx-r.fx-wipe.fx-in{animation:none}
+.fx-r.fx-wipe.fx-in img{clip-path:none;animation:fx-wipe-img 1.8s cubic-bezier(.77,0,.18,1) var(--fx-d,0s) backwards}
+.fx-r.fx-wipe::after{content:"";position:absolute;left:0;right:0;top:100%;height:2px;z-index:2;pointer-events:none;opacity:0;
+  background:linear-gradient(90deg,transparent,var(--gold-light,#E3C877) 20%,#fff4cf 50%,var(--gold-light,#E3C877) 80%,transparent);
+  box-shadow:0 0 14px 2px rgba(227,200,119,.65)}
+.fx-r.fx-wipe.fx-in::after{animation:fx-wipe-line 1.25s cubic-bezier(.77,0,.18,1) var(--fx-d,0s) both}
+
+/* ---------- 3. split-text hero heading + typewriter subtitle ---------- */
+@keyframes fx-ch{from{opacity:0;transform:translateY(.55em) rotate(4deg);filter:blur(5px)}to{opacity:1;transform:none;filter:none}}
+.fx-word{display:inline-block;white-space:nowrap}
+.fx-ch{display:inline-block;animation:fx-ch .75s var(--ease,cubic-bezier(.22,.61,.36,1)) calc(var(--c) * 24ms + .3s) backwards}
+.fx-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.fx-caret{display:inline-block;width:2px;height:1.05em;margin-left:3px;vertical-align:-.15em;background:var(--gold,#C9A84C);animation:fx-blink .8s steps(1) infinite}
+@keyframes fx-blink{50%{opacity:0}}
+
+/* ---------- 4. 3D tilt on service cards + magnetic primary buttons ---------- */
+.service-card.fx-tilt:hover{transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(-6px)}
+.fx-mag{will-change:translate}
+
+/* ---------- 5. cursor accents (native cursor is NOT hidden) ---------- */
+.fx-dot,.fx-ring{position:fixed;left:0;top:0;pointer-events:none;z-index:300;border-radius:50%;opacity:0;transition:opacity .25s}
+.fx-dot{width:6px;height:6px;margin:-3px 0 0 -3px;background:var(--gold,#C9A84C)}
+.fx-ring{width:34px;height:34px;margin:-17px 0 0 -17px;border:1.5px solid rgba(201,168,76,.55);
+  transition:opacity .25s,width .25s var(--ease),height .25s var(--ease),margin .25s var(--ease),background-color .25s,border-color .25s}
+.fx-ring.fx-link{width:54px;height:54px;margin:-27px 0 0 -27px;background:rgba(201,168,76,.1);border-color:rgba(227,200,119,.8)}
+.fx-cursor-on .fx-dot,.fx-cursor-on .fx-ring{opacity:1}
+
+/* ---------- 6. slow gradients (complement the network canvas) ---------- */
+@keyframes fx-grad{0%{background-position:0 0,0% 50%}50%{background-position:0 0,100% 50%}100%{background-position:0 0,0% 50%}}
+.cta{background:
+    radial-gradient(ellipse 60% 60% at 50% 100%,rgba(201,168,76,.09),transparent),
+    linear-gradient(120deg,rgba(11,20,55,.78),rgba(22,32,80,.72),rgba(6,13,36,.88),rgba(11,20,55,.78));
+  background-size:100% 100%,320% 320%;animation:fx-grad 22s ease-in-out infinite}
+@keyframes fx-drift{from{translate:0 0}to{translate:6vw 5vh}}
+.hero-grid-lines::before{animation:fx-drift 24s ease-in-out infinite alternate}
+.hero-grid-lines::after{animation:fx-drift 30s ease-in-out infinite alternate-reverse}
+.hero-grid-lines{will-change:translate}
+
+/* ---------- 7. page transition: cross-document View Transitions (Chrome/Edge). Others: your 220 ms fade ---------- */
+@media (prefers-reduced-motion:no-preference){
+  @view-transition{navigation:auto}
+  ::view-transition-old(root){animation:.25s var(--ease,ease) both fx-vt-out}
+  ::view-transition-new(root){animation:.35s var(--ease,ease) both fx-vt-in}
+  .brand img{view-transition-name:fx-logo}                /* logo stays put while the page changes */
+}
+@keyframes fx-vt-out{to{opacity:0}}
+@keyframes fx-vt-in{from{opacity:0}}
+
+/* ---------- 8. notice shown when the OS "reduce motion" setting is on ---------- */
+.fx-note{position:fixed;left:1rem;bottom:1rem;z-index:150;max-width:min(24rem,calc(100vw - 2rem));padding:.9rem 1rem;
+  background:rgba(11,20,55,.92);border:1px solid rgba(201,168,76,.35);border-radius:.75rem;color:rgba(255,255,255,.85);
+  font-size:.82rem;line-height:1.5;box-shadow:0 14px 40px -14px rgba(0,0,0,.7)}
+@supports (backdrop-filter:blur(8px)){.fx-note{background:rgba(11,20,55,.7);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}}
+.fx-note p{margin:0 0 .6rem;text-align:left}
+.fx-note button{font:inherit;cursor:pointer;padding:.4rem .8rem;margin-right:.4rem;border-radius:.5rem;border:1px solid rgba(201,168,76,.6);background:var(--gold,#C9A84C);color:#060D24;font-weight:600}
+.fx-note button.fx-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.25)}
+
+/* ---------- reduced motion (only when the visitor has NOT opted in) ---------- */
+@media (prefers-reduced-motion:reduce){
+  html:not(.fx-force) .fx-r{opacity:1;translate:none;scale:none;animation:none}
+  html:not(.fx-force) .fx-r.fx-wipe img{clip-path:none;animation:none}
+  html:not(.fx-force) .fx-r.fx-wipe::after{display:none}
+  html:not(.fx-force) .fx-ch{animation:none}
+  html:not(.fx-force) .cta,html:not(.fx-force) .hero-grid-lines::before,html:not(.fx-force) .hero-grid-lines::after{animation:none}
+  html:not(.fx-force) .fx-scroll{display:none}
+}
+@media (max-width:760px){.hero-grid-lines::before,.hero-grid-lines::after{animation:none}}
+
+/* narrow screens: slide up instead of sideways (a sideways start position would widen the page) */
+@media (max-width:900px){
+  .fx-r.fx-left,.fx-r.fx-right{translate:0 32px}
+  .fx-r.fx-in.fx-left,.fx-r.fx-in.fx-right{animation-name:fx-up}
+}

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Schedule of Loads | SolNet Solutions Inc.</title>
+<link rel="icon" type="image/png" href="../Logo/SOLNET%20LOGO.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css"><link rel="stylesheet" href="../css/animations.css"><link rel="stylesheet" href="../css/responsive.css"><link rel="stylesheet" href="../css/effects.css">
+</head>
+<body>
+<!--
+  SCHEDULE OF LOADS PAGE  (pages/schedule-of-loads.html)
+  Every image/link on this page uses "../" because this file is inside the pages/ folder.
+  Look for the markers:  ===== EDIT HERE =====   to find where to type your own content.
+  Each building links to its schedule of loads (Google Drive / Google Sheets). Edit the href of a card to change a link;
+  copy a whole <article class="substation-card">...</article> to add a building.
+-->
+
+<!-- ===== HEADER (same on every page) ===== -->
+<header class="site-header">
+  <nav class="nav" aria-label="Main">
+    <!-- COMPANY LOGO: INDIVIDUAL DASHBOARD PAGES -->
+    <a class="brand" href="../index.html">
+      <img src="../Logo/SOLNET%20LOGO.png" alt="SolNet Solutions Inc. logo">
+      <span class="brand-name">SolNet <span>Solutions Inc.</span></span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="navPanel" aria-label="Open menu"><span></span><span></span></button>
+    <ul class="nav-links" id="navPanel">
+      <li><a href="../index.html#home">Home</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#solutions">Services</a></li>
+      <li><a href="../index.html#location">Location</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <!-- ===== PAGE TITLE ===== -->
+  <section class="page-hero">
+    <p class="label">Energy Monitoring System</p>
+    <h1>Schedule of Loads</h1>
+    <!-- ===== EDIT HERE: intro paragraph ===== -->
+    <p class="lead"></p>
+    <div class="btn-row">
+      <a class="btn btn-secondary" href="energy-monitor.html"><span class="arrow" style="transform:none">←</span> BACK TO ENERGY MONITORING</a>
+    </div>
+  </section>
+
+  <!-- ===== SUBSTATION 1 ===== -->
+  <section class="section" id="substation-1">
+    <p class="label">Substation 1</p>
+    <h2>Substation 1 loads.</h2>
+    <div class="load-list">
+      <article class="load-item">
+        <div class="load-head">
+          <div><span class="solar-tag">Google Drive file</span><h3>Tech Building</h3></div>
+          <div class="btn-row">
+            <button class="btn btn-secondary load-toggle" type="button" aria-expanded="true" aria-controls="load-1-1">HIDE SHEET</button>
+            <!-- ===== EDIT HERE: change this link AND the iframe src below it (same file ID, but ending in /preview) for Tech Building ===== -->
+            <a class="btn btn-primary" href="https://drive.google.com/file/d/1ipBNs6HtDV6SJ2iCbYOS8-iWXA9ZsrFY/view" target="_blank" rel="noopener noreferrer">OPEN FILE <span class="arrow">↗</span></a>
+          </div>
+        </div>
+        <div class="load-panel" id="load-1-1">
+          <iframe src="https://drive.google.com/file/d/1ipBNs6HtDV6SJ2iCbYOS8-iWXA9ZsrFY/preview" title="Tech Building schedule of loads" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          <p class="load-note">If the sheet does not appear, the file is not shared publicly yet. Use OPEN FILE.</p>
+        </div>
+      </article>
+      <article class="load-item">
+        <div class="load-head">
+          <div><span class="solar-tag">Google Sheets</span><h3>Sports Complex</h3></div>
+          <div class="btn-row">
+            <button class="btn btn-secondary load-toggle" type="button" aria-expanded="true" aria-controls="load-1-2">HIDE SHEET</button>
+            <!-- ===== EDIT HERE: change this link AND the iframe src below it (same file ID, but ending in /preview) for Sports Complex ===== -->
+            <a class="btn btn-primary" href="https://docs.google.com/spreadsheets/d/11lwlOCwvM8JomncIre53YOTI3aksNkp14yZgCWFjDeQ/edit" target="_blank" rel="noopener noreferrer">OPEN FILE <span class="arrow">↗</span></a>
+          </div>
+        </div>
+        <div class="load-panel" id="load-1-2">
+          <iframe src="https://docs.google.com/spreadsheets/d/11lwlOCwvM8JomncIre53YOTI3aksNkp14yZgCWFjDeQ/preview" title="Sports Complex schedule of loads" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          <p class="load-note">If the sheet does not appear, the file is not shared publicly yet. Use OPEN FILE.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== SUBSTATION 2 ===== -->
+  <section class="section" id="substation-2">
+    <p class="label">Substation 2</p>
+    <h2>Substation 2 loads.</h2>
+    <div class="load-list">
+      <article class="load-item">
+        <div class="load-head">
+          <div><span class="solar-tag">Google Drive file</span><h3>SAS and Andaya Building</h3></div>
+          <div class="btn-row">
+            <button class="btn btn-secondary load-toggle" type="button" aria-expanded="true" aria-controls="load-2-1">HIDE SHEET</button>
+            <!-- ===== EDIT HERE: change this link AND the iframe src below it (same file ID, but ending in /preview) for SAS and Andaya Building ===== -->
+            <a class="btn btn-primary" href="https://drive.google.com/file/d/1Xd491B9C2RSONjEMN73Gr95Ne_rfhUsa/view" target="_blank" rel="noopener noreferrer">OPEN FILE <span class="arrow">↗</span></a>
+          </div>
+        </div>
+        <div class="load-panel" id="load-2-1">
+          <iframe src="https://drive.google.com/file/d/1Xd491B9C2RSONjEMN73Gr95Ne_rfhUsa/preview" title="SAS and Andaya Building schedule of loads" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          <p class="load-note">If the sheet does not appear, the file is not shared publicly yet. Use OPEN FILE.</p>
+        </div>
+      </article>
+      <article class="load-item">
+        <div class="load-head">
+          <div><span class="solar-tag">Google Drive file</span><h3>BiPSU Gymnasium</h3></div>
+          <div class="btn-row">
+            <button class="btn btn-secondary load-toggle" type="button" aria-expanded="true" aria-controls="load-2-2">HIDE SHEET</button>
+            <!-- ===== EDIT HERE: change this link AND the iframe src below it (same file ID, but ending in /preview) for BiPSU Gymnasium ===== -->
+            <a class="btn btn-primary" href="https://drive.google.com/file/d/1DXS4gurTwEm2rdGKJtzZxnOIWYESnGEX/view" target="_blank" rel="noopener noreferrer">OPEN FILE <span class="arrow">↗</span></a>
+          </div>
+        </div>
+        <div class="load-panel" id="load-2-2">
+          <iframe src="https://drive.google.com/file/d/1DXS4gurTwEm2rdGKJtzZxnOIWYESnGEX/preview" title="BiPSU Gymnasium schedule of loads" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          <p class="load-note">If the sheet does not appear, the file is not shared publicly yet. Use OPEN FILE.</p>
+        </div>
+      </article>
+      <article class="load-item">
+        <div class="load-head">
+          <div><span class="solar-tag">Google Drive file</span><h3>Main Nursing Building</h3></div>
+          <div class="btn-row">
+            <button class="btn btn-secondary load-toggle" type="button" aria-expanded="true" aria-controls="load-2-3">HIDE SHEET</button>
+            <!-- ===== EDIT HERE: change this link AND the iframe src below it (same file ID, but ending in /preview) for Main Nursing Building ===== -->
+            <a class="btn btn-primary" href="https://drive.google.com/file/d/1j9ldmBxVfsubLoeeCUVhLQJmo0ssyAIN/view" target="_blank" rel="noopener noreferrer">OPEN FILE <span class="arrow">↗</span></a>
+          </div>
+        </div>
+        <div class="load-panel" id="load-2-3">
+          <iframe src="https://drive.google.com/file/d/1j9ldmBxVfsubLoeeCUVhLQJmo0ssyAIN/preview" title="Main Nursing Building schedule of loads" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          <p class="load-note">If the sheet does not appear, the file is not shared publicly yet. Use OPEN FILE.</p>
+        </div>
+      </article>
+      <article class="load-item">
+        <div class="load-head">
+          <div><span class="solar-tag">Google Drive file</span><h3>Nursing Extension Building</h3></div>
+          <div class="btn-row">
+            <button class="btn btn-secondary load-toggle" type="button" aria-expanded="true" aria-controls="load-2-4">HIDE SHEET</button>
+            <!-- ===== EDIT HERE: change this link AND the iframe src below it (same file ID, but ending in /preview) for Nursing Extension Building ===== -->
+            <a class="btn btn-primary" href="https://drive.google.com/file/d/1RdHjfwD9gsxGF7ObiXXG90P323FOSj2s/view" target="_blank" rel="noopener noreferrer">OPEN FILE <span class="arrow">↗</span></a>
+          </div>
+        </div>
+        <div class="load-panel" id="load-2-4">
+          <iframe src="https://drive.google.com/file/d/1RdHjfwD9gsxGF7ObiXXG90P323FOSj2s/preview" title="Nursing Extension Building schedule of loads" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          <p class="load-note">If the sheet does not appear, the file is not shared publicly yet. Use OPEN FILE.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== SUBSTATION 3 ===== -->
+  <section class="section" id="substation-3">
+    <p class="label">Substation 3</p>
+    <h2>Substation 3 loads.</h2>
+    <div class="load-list">
+      <article class="load-item">
+        <div class="load-head">
+          <div><span class="solar-tag">Google Sheets</span><h3>LHS Building</h3></div>
+          <div class="btn-row">
+            <button class="btn btn-secondary load-toggle" type="button" aria-expanded="true" aria-controls="load-3-1">HIDE SHEET</button>
+            <!-- ===== EDIT HERE: change this link AND the iframe src below it (same file ID, but ending in /preview) for LHS Building ===== -->
+            <a class="btn btn-primary" href="https://docs.google.com/spreadsheets/d/1QhYYxX9JMJIllPeKeF_fJo_h5ZPVhut4rPlIuOLZlUA/edit?gid=0#gid=0" target="_blank" rel="noopener noreferrer">OPEN FILE <span class="arrow">↗</span></a>
+          </div>
+        </div>
+        <div class="load-panel" id="load-3-1">
+          <iframe src="https://docs.google.com/spreadsheets/d/1QhYYxX9JMJIllPeKeF_fJo_h5ZPVhut4rPlIuOLZlUA/preview" title="LHS Building schedule of loads" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          <p class="load-note">If the sheet does not appear, the file is not shared publicly yet. Use OPEN FILE.</p>
+        </div>
+      </article>
+      <article class="load-item">
+        <div class="load-head">
+          <div><span class="solar-tag">Google Sheets</span><h3>Wellness Center</h3></div>
+          <div class="btn-row">
+            <button class="btn btn-secondary load-toggle" type="button" aria-expanded="true" aria-controls="load-3-2">HIDE SHEET</button>
+            <!-- ===== EDIT HERE: change this link AND the iframe src below it (same file ID, but ending in /preview) for Wellness Center ===== -->
+            <a class="btn btn-primary" href="https://docs.google.com/spreadsheets/d/1Efx5EiF9A70ig0wpHyRVQFxU7YxEY9-T8fx5Ik9AUfQ/edit?gid=0#gid=0" target="_blank" rel="noopener noreferrer">OPEN FILE <span class="arrow">↗</span></a>
+          </div>
+        </div>
+        <div class="load-panel" id="load-3-2">
+          <iframe src="https://docs.google.com/spreadsheets/d/1Efx5EiF9A70ig0wpHyRVQFxU7YxEY9-T8fx5Ik9AUfQ/preview" title="Wellness Center schedule of loads" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          <p class="load-note">If the sheet does not appear, the file is not shared publicly yet. Use OPEN FILE.</p>
+        </div>
+      </article>
+      <article class="load-item">
+        <div class="load-head">
+          <div><span class="solar-tag">Google Drive file</span><h3>Graduate School</h3></div>
+          <div class="btn-row">
+            <button class="btn btn-secondary load-toggle" type="button" aria-expanded="true" aria-controls="load-3-3">HIDE SHEET</button>
+            <!-- ===== EDIT HERE: change this link AND the iframe src below it (same file ID, but ending in /preview) for Graduate School ===== -->
+            <a class="btn btn-primary" href="https://drive.google.com/file/d/11MuoQG-pINeWjRkTZqIHY5MOiSlGq2uU/view" target="_blank" rel="noopener noreferrer">OPEN FILE <span class="arrow">↗</span></a>
+          </div>
+        </div>
+        <div class="load-panel" id="load-3-3">
+          <iframe src="https://drive.google.com/file/d/11MuoQG-pINeWjRkTZqIHY5MOiSlGq2uU/preview" title="Graduate School schedule of loads" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          <p class="load-note">If the sheet does not appear, the file is not shared publicly yet. Use OPEN FILE.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== OTHER DASHBOARDS ===== -->
+  <section class="section" id="other-dashboards">
+    <p class="label">Explore more</p>
+    <h2>Other dashboards.</h2>
+    <div class="btn-row page-links">
+      <a class="btn btn-secondary" href="solar.html">SOLAR</a>
+      <a class="btn btn-secondary" href="telco.html">TELECOMMUNICATIONS</a>
+      <a class="btn btn-secondary" href="org-chart.html">ORG CHART</a>
+      <a class="btn btn-secondary" href="energy-monitor.html">ENERGY MONITORING</a>
+    </div>
+  </section>
+</main>
+
+<!-- ===== FOOTER (same on every page) ===== -->
+<footer class="site-footer" id="contact">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">
+        <img class="footer-logo" src="../Logo/SOLNET%20LOGO.png" alt="SolNet Solutions Inc. logo">
+        <span class="footer-brand-name">SolNet Solutions Inc.</span>
+      </div>
+      <p>Engineering reliable infrastructure for a connected and sustainable future.</p>
+    </div>
+    <div><h4>Quick links</h4><ul><li><a href="../index.html">Home</a></li><li><a href="../index.html#about">About</a></li><li><a href="solar.html">Solar</a></li><li><a href="telco.html">Telecommunications</a></li><li><a href="org-chart.html">Org Chart</a></li><li><a href="energy-monitor.html">Energy Monitoring</a></li><li><a href="schedule-of-loads.html">Schedule of Loads</a></li></ul></div>
+    <div><h4>Socials</h4><ul><li><a href="#" aria-label="Facebook">Facebook</a></li><li><a href="#" aria-label="Instagram">Solnet</a></li><li><a href="#" aria-label="LinkedIn">LinkedIn</a></li></ul><p class="note"></p></div>
+    <div><h4>Contact</h4><p>Brgy. Calumpang Naval, Biliran</p><p>0966-711-8245</p><p>SolNetSolutions@gmail.com</p></div>
+  </div>
+  <!-- FOOTER CREDIT (centered): edit the three lines below -->
+  <div class="footer-credit">
+    <p class="credit-title">SOLNET SOLUTION</p>
+    <p>BSEE 4A</p>
+    <p>Submitted to: Engr. Roosevelt G. Mendoza</p>
+  </div>
+  <p class="copyright">© 2026 SolNet Solutions Inc. All Rights Reserved.</p>
+</footer>
+
+<!-- image zoom viewer (used by images with data-zoom) -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Details" hidden><div class="modal-content"><button class="modal-close" aria-label="Close">×</button><div class="modal-body"></div></div></div>
+
+<script src="../js/background.js"></script>
+<script src="../js/main.js"></script><script src="../js/navigation.js"></script><script src="../js/modal.js"></script><script src="../js/animations.js"></script>
+<script src="../js/ui-enhance.js"></script>
+<script src="../js/motion.js"></script>
+<script src="../js/effects.js"></script>
+<script src="../js/schedule.js"></script>
+</body>
+</html>
